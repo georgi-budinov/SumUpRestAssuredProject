@@ -13,9 +13,9 @@ public class BaseTestSteps {
     public void getToken() {
 
         String jsonRequestBody = "{\"client_id\":\"cc_classic_149Vl9uSRwgbI2IY8jnr9M32rHT10\", " +
-                            "\"client_secret\":\"cc_sk_classic_48VWilfxEuMoevXnpyrPdpnCfRW8GYrNIR8qRRG95NvEudPngT\", " +
-                            "\"username\":\"pl.aleksiev90@gmail.com\", " +
-                            "\"password\":\"Sturmgewehr44\"}";
+                                    "\"client_secret\":\"cc_sk_classic_48VWilfxEuMoevXnpyrPdpnCfRW8GYrNIR8qRRG95NvEudPngT\", " +
+                                    "\"username\":\"pl.aleksiev90@gmail.com\", " +
+                                    "\"password\":\"Sturmgewehr44\"}";
         // Make API call to get authentication token
         Response response = given()
                 .baseUri(GET_TOKEN_BASE_URL)

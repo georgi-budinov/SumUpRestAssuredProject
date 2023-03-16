@@ -30,6 +30,4 @@ public class TransactionTests extends BaseTestSteps {
                 .statusCode(200)
                 .body("items", empty());
     }
-
-
 }
