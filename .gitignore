@@ -1,2 +1,2 @@
 # Ignore reports generated from tests
-/SumUpRestAssuredProject/reports/*
+reports/*

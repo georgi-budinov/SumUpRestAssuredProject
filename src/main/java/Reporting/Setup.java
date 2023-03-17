@@ -23,18 +23,18 @@ public class Setup implements ITestListener {
     }
     @Override
     public void onTestStart(ITestResult result) {
-        ExtentTest test = extentReports.createTest("Test Name " + result.getTestClass().getName() + " - " + result.getMethod().getMethodName());
+        ExtentTest test = extentReports.createTest("Execution of test class: " + result.getTestClass().getName() + "\n- for test method: " + result.getMethod().getMethodName());
         extentTest.set(test);
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
+        System.out.println("Success of test cases and its details are : "+iTestResult.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-
+        System.out.println("Failure of test cases and its details are : "+iTestResult.getName());
     }
 
     @Override

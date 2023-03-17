@@ -1,14 +1,16 @@
 package Tests;
+import Reporting.ExtentReportManager;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;
 
 import static Constants.EndPoints.*;
 import static io.restassured.RestAssured.*;
-
 public class BaseTestSteps {
-
     protected String accessToken;
-
+    protected ExtentReportManager extentReportManager;
+    public BaseTestSteps() {
+        extentReportManager = new ExtentReportManager();
+    }
     @BeforeMethod
     public void getToken() {
 
@@ -16,7 +18,7 @@ public class BaseTestSteps {
                                     "\"client_secret\":\"cc_sk_classic_48VWilfxEuMoevXnpyrPdpnCfRW8GYrNIR8qRRG95NvEudPngT\", " +
                                     "\"username\":\"pl.aleksiev90@gmail.com\", " +
                                     "\"password\":\"Sturmgewehr44\"}";
-        // Make API call to get authentication token
+        // API call to get authentication token
         Response response = given()
                 .baseUri(GET_TOKEN_BASE_URL)
                 .contentType("application/json")
@@ -26,7 +28,7 @@ public class BaseTestSteps {
         // Get the token from the response body
         accessToken = response.jsonPath().getString("access_token");
 
-        // Print the token for debugging purposes
+        // Print the token
         System.out.println("Auth token: " + accessToken);
     }
 }
